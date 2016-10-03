@@ -7,4 +7,4 @@
 /pkg
 /doc/api
 /Gemfile.lock
-/public/uploads/*
+public/uploads/
