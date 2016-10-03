@@ -1,0 +1,9 @@
+h2 All models
+- @photos.each do |photo|
+  ul
+    li = photo.name
+    li = photo.description
+    li = photo.file.medium
+  img src="#{photo.file_url}"
+  
+a href="/" Back to Home
