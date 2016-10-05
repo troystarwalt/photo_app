@@ -1,7 +1,17 @@
 doctype html
 html
   head
-    title My Slim Templates App
+    script src="http://code.jquery.com/jquery-3.1.1.min.js"   integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="   crossorigin="anonymous"
+    script src="/jquery.min.js"
+    title Photo App
   body
-    .nav Welcome to Sinatra!
+    #nav 
+      a href="/" Photo App
+      br
+      a href="/photos" All Photos
+      br
+      - if @current_admin
+        a href="/sessions/logout" Logout
+      - else
+        a href="/login" Login
     == yield

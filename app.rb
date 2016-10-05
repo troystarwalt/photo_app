@@ -8,6 +8,7 @@ require 'carrierwave'
 require 'pry'
 require 'carrierwave/processing/mini_magick'
 require 'better_errors'
+require 'bootstrap'
 enable :sessions
 set :session_secret, SecureRandom.hex(64)
 
