@@ -17,3 +17,11 @@ configure :production, :development do
 			:encoding => 'utf8'
     )
 end
+# grab all css files
+# @files = Dir["public/css/*.css"]
+
+def my_css_files
+  files.each do |file_name|
+    file_name
+  end
+end

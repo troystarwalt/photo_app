@@ -1,17 +1,39 @@
 doctype html
 html
   head
+    title Photo App
+    meta charset="utf-8" /
+    meta name="viewport" content="width=device-width, initial-scale=1", name="viewport" /
     script src="http://code.jquery.com/jquery-3.1.1.min.js"   integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="   crossorigin="anonymous"
     script src="/jquery.min.js"
-    title Photo App
+    link rel="stylesheet" href="#{stylesheet_path 'app'}" content_type="text/css"
+
   body
-    #nav 
-      a href="/" Photo App
-      br
-      a href="/photos" All Photos
-      br
-      - if @current_admin
-        a href="/sessions/logout" Logout
-      - else
-        a href="/login" Login
+    #layout.pure-g
+      .sidebar.pure-u-1.pure-u-md-1-4
+        .header
+          h1.brand-title campRC
+          h2.brand-tagline Camper Adventures
+          nav.nav
+            ul.nav-list
+              li.nav-item
+                a.pure-button href="/"  Home
+              li.nav-item
+                a.pure-button href="/photos"  All Photos
+              - if @current_admin
+                li.nav-item
+                  a.pure-button href="/sessions/logout" Logout
+                li.nav-item
+                  a.pure-button href="/photos/new" New Photo
+              - else
+                a.pure-button href="/login"  Login
     == yield
+  .footer
+    .pure-menu.pure-menu-horizontal
+      ul
+        li.pure-menu-item
+          a.pure-menu-link href="http://purecss.io/"  About
+        li.pure-menu-item
+          a.pure-menu-link href="http://twitter.com/yuilibrary/"  Twitter
+        li.pure-menu-item
+          a.pure-menu-link href="http://github.com/yahoo/pure/"  GitHub
