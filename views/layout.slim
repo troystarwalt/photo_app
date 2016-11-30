@@ -3,14 +3,16 @@ html
   head
     title Photo App
     meta charset="utf-8" /
-    meta name="viewport" content="width=device-width, initial-scale=1", name="viewport" /
+    meta name="viewport" content="width=device-width, initial-scale=1" /
     script src="http://code.jquery.com/jquery-3.1.1.min.js"   integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="   crossorigin="anonymous"
     script src="/jquery.min.js"
+    link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
+    link rel="stylesheet" href="http://yui.yahooapis.com/pure/0.6.0/pure-min.css"
     link rel="stylesheet" href="#{stylesheet_path 'app'}" content_type="text/css"
 
   body
     #layout.pure-g
-      .sidebar.pure-u-1.pure-u-md-1-4
+      .sidebar.pure-u-1-5.pure-u-md-1-4
         .header
           h1.brand-title campRC
           h2.brand-tagline Camper Adventures
@@ -26,8 +28,9 @@ html
                 li.nav-item
                   a.pure-button href="/photos/new" New Photo
               - else
-                a.pure-button href="/login"  Login
-    == yield
+                li.nav-item
+                  a.pure-button href="/login"  Login
+      == yield
   .footer
     .pure-menu.pure-menu-horizontal
       ul

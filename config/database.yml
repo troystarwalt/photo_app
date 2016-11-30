@@ -4,3 +4,9 @@ development:
   username: troys
   password: slayer
   host: localhost
+
+production:
+  adapter: postgresql
+  host: hmmmm
+  username: user
+  database: mydb-production

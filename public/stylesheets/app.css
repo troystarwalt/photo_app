@@ -1,23 +1,5 @@
-@import 'base-context-min.css';
-@import 'base-min.css';
-@import 'buttons-core-min.css';
-@import 'buttons-min.css';
-@import 'forms-min.css';
-@import 'forms-nr-min.css';
-@import 'grids-core-min.css';
-@import 'grids-min.css';
-@import 'grids-responsive-min.css';
-@import 'grids-responsive-old-ie-min.css';
-@import 'grids-units-min.css';
-@import 'menus-core-min.css';
-@import 'menus-dropdown-min.css';
-@import 'menus-horizontal-min.css';
-@import 'menus-min.css';
-@import 'menus-scrollable-min.css';
-@import 'menus-skin-min.css';
-@import 'pure-min.css';
-@import 'pure-nr-min.css';
-@import 'tables-min.css';
+@import 'sass/main-styles.sass;
+
 
 
 * {

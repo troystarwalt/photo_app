@@ -20,7 +20,9 @@
   end
   require "carrierwave/orm/activerecord"
 
-
+after do
+  ActiveRecord::Base.connection.close
+end
 
   # Just in development!
   configure :development do
@@ -34,6 +36,9 @@
 
   # root
   get '/' do
+    puts "welcome to the root"
+    @top_photo = Photo.order(likes: :desc).last
+    @photos = Photo.order(created_at: :asc).last(10).reverse
     slim :index
   end
 
