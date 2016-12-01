@@ -1,0 +1,14 @@
+section.post
+  header.post-header
+    h2.post-title=@photo.name
+    p.post-meta
+      | Posted on
+      a.post-author href="#"= @photo.created_at
+  .post-description
+    .post-images.pure-g
+      .pure-u-1.pure-u-md-1-2
+        img.pure-img-responsive alt=("#{@photo.name}") src="#{@photo.file.medium}" /
+        p= @photo.description
+        button.pure-button
+          |
+          span.fa.fa-thumbs-up aria-hidden="true" /

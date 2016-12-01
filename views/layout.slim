@@ -9,10 +9,21 @@ html
     link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
     link rel="stylesheet" href="http://yui.yahooapis.com/pure/0.6.0/pure-min.css"
     link rel="stylesheet" href="#{stylesheet_path 'app'}" content_type="text/css"
+    <!--[if lte IE 8]>
+  
+    link rel="stylesheet" href="http://yui.yahooapis.com/pure/0.6.0/grids-responsive-old-ie-min.css"
+  
+<![endif]-->
+<!--[if gt IE 8]><!-->
+  
+    link rel="stylesheet" href="http://yui.yahooapis.com/pure/0.6.0/grids-responsive-min.css"
+  
+<!--<![endif]-->
+
 
   body
     #layout.pure-g
-      .sidebar.pure-u-1-5.pure-u-md-1-4
+      .sidebar.pure-u-1.pure-u-md-1-4
         .header
           h1.brand-title campRC
           h2.brand-tagline Camper Adventures
@@ -30,6 +41,7 @@ html
               - else
                 li.nav-item
                   a.pure-button href="/login"  Login
+    .content.pure-u-1.pure-u-md-3-4
       == yield
   .footer
     .pure-menu.pure-menu-horizontal

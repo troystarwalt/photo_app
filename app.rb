@@ -52,6 +52,12 @@ end
     end
   end
 
+  get '/show/:id' do
+    @photo = Photo.find(params[:id])
+    puts "hi"
+    slim :'photos/show'
+  end
+
   # post route for new photo
   post '/submit' do
     @photo = Photo.new(params[:photo])

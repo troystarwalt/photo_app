@@ -9,7 +9,7 @@ class Photo < ActiveRecord::Base
       order(created_at: :desc)
     end
 
-    def recent(n)
+    def recent(n)youter
       in_order.endmost(n)
     end
 

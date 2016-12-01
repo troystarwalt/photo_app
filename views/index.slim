@@ -1,35 +1,34 @@
-.content.pure-u-1.pure-u-md-3-4
-  div
-    /! A wrapper for all the blog posts
-    .posts
-      h1.content-subhead Top Photo
-      /! A single blog post
+div
+  /! A wrapper for all the blog posts
+  .posts
+    h1.content-subhead Top Photo
+    /! A single blog post
+    section.post
+      header.post-header
+        h2.post-title= @top_photo.name
+        p.post-meta= @top_photo.created_at
+      .post-description
+        .post-images.pure-g
+          .pure-u-1.pure-u-md-1-2
+            a href="show/#{@top_photo.id}" 
+              img.pure-img-responsive alt=("Photo of someone working poolside at a resort") src="#{@top_photo.file.medium}" /
+            .post-image-meta
+              h3= @top_photo.description
+    h1.content-subhead Recent Posts
+    - @photos.each do |photo|  
       section.post
         header.post-header
-          h2.post-title= @top_photo.name
-          p.post-meta= @top_photo.created_at
+          h2.post-title=photo.name
+          p.post-meta
+            | Posted on
+            a.post-author href="#"= photo.created_at
         .post-description
           .post-images.pure-g
             .pure-u-1.pure-u-md-1-2
-              a href="###" 
-                img.pure-img-responsive alt=("Photo of someone working poolside at a resort") src="#{@top_photo.file.medium}" /
+              a href="show/#{photo.id}" 
+                img.pure-img-responsive alt=("#{photo.name}") src="#{photo.file.medium}" /
               .post-image-meta
-                h3= @top_photo.description
-      h1.content-subhead Recent Posts
-      - @photos.each do |photo|  
-        section.post
-          header.post-header
-            h2.post-title=photo.name
-            p.post-meta
-              | Posted on
-              a.post-author href="#"= photo.created_at
-          .post-description
-            .post-images.pure-g
-              .pure-u-1.pure-u-md-1-2
-                a href="###" 
-                  img.pure-img-responsive alt=("#{photo.name}") src="#{photo.file.medium}" /
-                .post-image-meta
-                  h3= photo.description
-                button.pure-button
-                  |
-                  span.fa.fa-thumbs-up aria-hidden="true" /
+                h3= photo.description
+              button.pure-button
+                |
+                span.fa.fa-thumbs-up aria-hidden="true" /
